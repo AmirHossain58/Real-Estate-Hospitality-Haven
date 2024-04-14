@@ -16,7 +16,7 @@ const Navbar = ({name,photo}) => {
   const navLink=<>
   <li><NavLink to='/'>Home</NavLink></li>
   <li><NavLink to='/register'>Update Profile</NavLink></li>
-  <li><NavLink to='/login'>Login </NavLink></li>
+  {/* <li><NavLink to='/login'>Login </NavLink></li> */}
   <li><NavLink to='/about'>About</NavLink></li>
   </>
   return (
@@ -30,7 +30,7 @@ const Navbar = ({name,photo}) => {
             {navLink}
           </ul>
         </div>
-      <Link to={'/'} className="btn btn-ghost text-xl">Hospitality Haven</Link>
+      <Link to={'/'} className="btn btn-ghost gap-0 font-bold text-xl">Hospitality<span className="text-red-500">Haven</span></Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
