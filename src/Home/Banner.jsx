@@ -4,7 +4,7 @@ const Banner = () => {
     return (
      <div className="relative ">
 
-<div className="carousel w-full overflow-hidden lg:max-h-[600px] opacity-">
+<div className="carousel w-full overflow-hidden lg:max-h-[600px]">
   <div id="slide1" className="carousel-item relative w-full">
     <img className="w-full overflow-hidden " src="https://i.ibb.co/s1CLVqd/beautiful-outdoor-view-with-umbrella.jpg" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

@@ -1,0 +1,74 @@
+[
+    {
+      "id": 1,
+      "segment_name": "Hospitality Haven",
+      "estate_title": "Beachfront Paradise Resort",
+      "image": "beachfront_resort.jpg",
+      "description": "Escape to a luxurious beachfront paradise resort offering unparalleled views and world-class amenities.",
+      "price": "$500 per night",
+      "status": "rent",
+      "area": "3,000 sq ft (Suite)",
+      "location": "Maldives",
+      "facilities": ["Private Beach Access", "Infinity Pool", "Spa & Wellness Center", "Fine Dining"]
+    },
+    {
+      "id": 2,
+      "segment_name": "Hospitality Haven",
+      "estate_title": "Mountain Retreat Lodge",
+      "image": "mountain_lodge.jpg",
+      "description": "Discover serenity at this secluded mountain retreat lodge surrounded by breathtaking mountain views.",
+      "price": "$400 per night",
+      "status": "rent",
+      "area": "2,500 sq ft (Cabin)",
+      "location": "Swiss Alps",
+      "facilities": ["Hot Tub", "Ski-in/Ski-out Access", "Fireplace", "Outdoor Dining Area"]
+    },
+    {
+      "id": 3,
+      "segment_name": "Hospitality Haven",
+      "estate_title": "Urban Boutique Hotel",
+      "image": "boutique_hotel.jpg",
+      "description": "Immerse yourself in the vibrant city life at this chic urban boutique hotel located in the heart of downtown.",
+      "price": "$300 per night",
+      "status": "rent",
+      "area": "500 sq ft (Room)",
+      "location": "New York City, USA",
+      "facilities": ["Rooftop Bar", "Fitness Center", "Concierge Service", "Fine Dining Restaurant"]
+    },
+    {
+      "id": 4,
+      "segment_name": "Hospitality Haven",
+      "estate_title": "Seaside Villa Retreat",
+      "image": "seaside_villa.jpg",
+      "description": "Experience luxury living at this exquisite seaside villa retreat with stunning ocean views and direct beach access.",
+      "price": "$600 per night",
+      "status": "rent",
+      "area": "4,000 sq ft",
+      "location": "Amalfi Coast, Italy",
+      "facilities": ["Private Pool", "Outdoor Dining Area", "Garden Terrace", "Home Theater"]
+    },
+    {
+      "id": 5,
+      "segment_name": "Hospitality Haven",
+      "estate_title": "Tropical Island Hideaway",
+      "image": "tropical_island.jpg",
+      "description": "Escape to a secluded tropical island hideaway and indulge in luxury surrounded by pristine beaches and lush greenery.",
+      "price": "$700 per night",
+      "status": "rent",
+      "area": "2,200 sq ft (Bungalow)",
+      "location": "Fiji",
+      "facilities": ["Private Beach Access", "Infinity Pool", "Outdoor Shower", "Poolside Bar"]
+    },
+    {
+      "id": 6,
+      "segment_name": "Hospitality Haven",
+      "estate_title": "Desert Oasis Retreat",
+      "image": "desert_oasis.jpg",
+      "description": "Discover tranquility at this luxurious desert oasis retreat, offering breathtaking desert views and modern amenities.",
+      "price": "$450 per night",
+      "status": "rent",
+      "area": "3,500 sq ft",
+      "location": "Palm Springs, USA",
+      "facilities": ["Private Pool", "Outdoor Kitchen", "Fire Pit", "Spa"]
+    }
+  ]
