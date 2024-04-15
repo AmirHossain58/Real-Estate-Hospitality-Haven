@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import { AuthContext } from '../provider/AuthProvider';
 import { useForm } from 'react-hook-form';
@@ -10,6 +10,8 @@ import { FaGoogle,FaGithub } from "react-icons/fa";
 const Login = () => {
     const {signIn,googleSignIn,user,githubSignIn}=useContext(AuthContext)
     const [show,setShow]=useState(false)
+    const location=useLocation()
+    const navigate=useNavigate()
 // console.log(user);
     const {
         register,
@@ -20,18 +22,24 @@ const Login = () => {
     
       const onSubmit = (data) =>{
         signIn(data.email,data.password)
-        .then()
+        .then(result=>{
+            navigate(location?.state?location.state:'/')
+        })
         .catch()
         console.log(data)
         }
         const handleGoogleSignIn=()=>{
             googleSignIn()
-            .then()
+            .then(result=>{
+                navigate(location?.state?location.state:'/')
+            })
             .catch()
         }
         const handleGithubSignIn=()=>{
             githubSignIn()
-            .then()
+            .then(result=>{
+                navigate(location?.state?location.state:'/')
+            })
             .catch(e=>{
                 console.log(e);
             })
