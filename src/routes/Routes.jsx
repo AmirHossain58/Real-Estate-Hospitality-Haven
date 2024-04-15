@@ -3,6 +3,7 @@ import Root from "../layout/Root";
 import Home from "../Home/Home";
 import Login from "../Login/Login";
 import Register from './../Register/Register';
+import CardDetails from "../Home/CardDetails";
 
 
 
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
         {
             path:'/register',
             element:<Register></Register>,
+        },
+        {
+            path:"/cardDetails/:id",
+            element:<CardDetails></CardDetails>,
+            loader:()=>fetch('/data.json')
         },
         
       ]
