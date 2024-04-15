@@ -1,10 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import { AuthContext } from '../provider/AuthProvider';
 import { useForm } from 'react-hook-form';
+import { FaEye,FaEyeSlash } from "react-icons/fa";
+import { FaGoogle,FaGithub } from "react-icons/fa";
+
+
 const Login = () => {
-    const {signIn}=useContext(AuthContext)
+    const {signIn,googleSignIn,user,githubSignIn}=useContext(AuthContext)
+    const [show,setShow]=useState(false)
+// console.log(user);
     const {
         register,
         handleSubmit,
@@ -17,6 +23,18 @@ const Login = () => {
         .then()
         .catch()
         console.log(data)
+        }
+        const handleGoogleSignIn=()=>{
+            googleSignIn()
+            .then()
+            .catch()
+        }
+        const handleGithubSignIn=()=>{
+            githubSignIn()
+            .then()
+            .catch(e=>{
+                console.log(e);
+            })
         }
     return (
         <div>
@@ -38,23 +56,38 @@ const Login = () => {
         />
         {errors.email && <span>This field is required</span>}
         </div>
-        <div className="form-control">
+        <div className="form-control relative">
         <label className="label">
             <span className="label-text">Password</span>
         </label>
-        <input type="password" name='password' placeholder="password" className="input input-bordered" 
+        <input type={show?'text':'password'}  name='password' placeholder="password" className="input input-bordered" 
         {...register("password", { required: true })}
         />
         {errors.password && <span>This field is required</span>}
         <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
         </label>
+        <div onClick={()=>{setShow(!show)}} className='absolute text-2xl right-4 top-[40%]'>
+            
+            {show?<FaEye />:<FaEyeSlash />}</div>
         </div>
         <div className="form-control mt-6">
         <button className="btn btn-primary uppercase font-bold">Register</button>
         </div>
     </form>
-    <p>Do have an account, Please <Link
+    <div className='flex items-center justify-around my-5'> 
+    {/* google login */}
+    <div onClick={handleGoogleSignIn}  className='flex items-center border p-3 rounded-lg'>
+    <img className='h-[40px]' src="/googlelogo_color_272x92dp.png" alt="" />
+    </div>
+        {/* github login */}
+
+    <div onClick={handleGithubSignIn} className='flex items-center border p-3 rounded-lg' >
+   <img className='h-[50px] rounded-xl' src="/freecodecampl-github.png" alt="" />
+    </div>
+
+    </div>
+    <p className='text-center mb-4'>Do have an account, Please <Link
     className='font-bold text-blue-800 underline' 
     to={'/register'}>Register</Link></p>
     </div>

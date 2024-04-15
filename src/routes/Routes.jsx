@@ -4,6 +4,7 @@ import Home from "../Home/Home";
 import Login from "../Login/Login";
 import Register from './../Register/Register';
 import CardDetails from "../Home/CardDetails";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -28,7 +29,9 @@ const router = createBrowserRouter([
         },
         {
             path:"/cardDetails/:id",
-            element:<CardDetails></CardDetails>,
+            element:<PrivateRoute>
+              <CardDetails></CardDetails>
+            </PrivateRoute>,
             loader:()=>fetch('/data.json')
         },
         

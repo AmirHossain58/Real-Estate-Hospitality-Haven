@@ -1,28 +1,33 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaEye,FaEyeSlash } from "react-icons/fa";
 
 import Navbar from '../Navbar/Navbar';
 import { AuthContext } from '../provider/AuthProvider';
 import { useForm } from "react-hook-form"
 const Register = () => {
+    const [show,setShow]=useState(false)
     const [name ,setName]=useState('')
     const [photo ,setPhoto]=useState('')
-    const {createUser}=useContext(AuthContext)
+    const {createUser,setUser,user}=useContext(AuthContext)
     const {
         register,
         handleSubmit,
         watch,
         formState: { errors },
-      } = useForm()
+    } = useForm()
     
-      const onSubmit = (data) =>{
-          console.log(data,data.photo,data.name)
-          setPhoto(data.photo)
-          setName(data.name)
-          createUser(data.email,data.password)
-          .then()
-          .catch()
-        }
+    const onSubmit = (data) =>{
+        //   console.log(data,data.photo,data.name)
+        
+        
+        setPhoto(data.photo)
+        setName(data.name)
+        createUser(data.email,data.password)
+        .then((r)=>{
+        })
+        .catch()
+    }
     return (
         <div>
             <Navbar 
@@ -65,17 +70,20 @@ const Register = () => {
         />
         {errors.email && <span>This field is required</span>}
         </div>
-        <div className="form-control">
+        <div className="form-control relative">
         <label className="label">
             <span className="label-text">Password</span>
         </label>
-        <input type="password" name='password' placeholder="password" className="input input-bordered" 
+        <input type={show?'text':'password'} name='password' placeholder="password" className="input input-bordered" 
         {...register("password", { required: true })}
         />
         {errors.password && <span>This field is required</span>}
         <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
         </label>
+        <div onClick={()=>{setShow(!show)}} className='absolute text-2xl right-4 top-[40%]'>
+            
+            {show?<FaEye />:<FaEyeSlash />}</div>
         </div>
         <div className="form-control mt-6">
         <button className="btn btn-primary uppercase font-bold">Register</button>

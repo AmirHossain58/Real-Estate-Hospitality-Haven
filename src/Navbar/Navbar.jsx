@@ -41,8 +41,8 @@ const Navbar = ({name,photo}) => {
         {
           user? <div className='flex'>
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-         <div title={user?name:''} className="w-10  rounded-full">
-            <img alt="Tailwind CSS Navbar component" src={photo||"https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"}/>
+         <div title={user.displayName||name} className="w-10  rounded-full">
+            <img alt="Tailwind CSS Navbar component" src={user.photoURL||photo||"https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"}/>
           </div>
          </div>
           <button onClick={handelLogOut} className='btn'>Logout</button>
