@@ -10,6 +10,7 @@ import {
     IconButton,
   } from "@material-tailwind/react";
 import { Link } from 'react-router-dom';
+import 'animate.css';
 
 
 const Cards = ({card}) => {
@@ -17,7 +18,7 @@ const Cards = ({card}) => {
     const{id,image,location,price,status,facilities,estate_title,description,area
     }=card
     return (
-        <div>
+        <div className='animate__animated animate__bounceIn'>
             <Card className="w-full p-2 rounded-lg shadow-lg">
       <CardHeader floated={false} color="blue-gray">
         <img

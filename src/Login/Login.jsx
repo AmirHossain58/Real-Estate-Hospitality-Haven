@@ -70,9 +70,9 @@ const Login = () => {
         <div>
             <Navbar></Navbar>
             <div className="hero min-h-screen bg-base-200">
-<div className="hero-content flex-col ">
+<div className="hero-content  flex-col ">
     <div className="text-center">
-    <h1 className="text-5xl font-bold">Register now!</h1>
+    <h1 className="text-5xl font-bold">Login now!</h1>
     <p className="py-6 max-w-2xl">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
     </div>
     <div className="card shrink-0 w-full  shadow-2xl bg-base-100">
@@ -102,10 +102,11 @@ const Login = () => {
             {show?<FaEye />:<FaEyeSlash />}</div>
         </div>
         <div className="form-control mt-6">
-        <button className="btn btn-primary uppercase font-bold">Register</button>
+        <button className="btn text-xl bg-red-400 text-white uppercase font-bold">login</button>
         </div>
     </form>
     <div className='flex items-center justify-around my-5'> 
+    <h3 className='text-3xl font-bold text-blue-500'>Login With </h3>
     {/* google login */}
     <div onClick={handleGoogleSignIn}  className='flex items-center border p-3 rounded-lg'>
     <img className='h-[40px]' src="/googlelogo_color_272x92dp.png" alt="" />

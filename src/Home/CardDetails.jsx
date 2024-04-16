@@ -8,8 +8,6 @@ import {
     CardBody,
     CardFooter,
     Typography,
-    Avatar,
-    Tooltip,
   } from "@material-tailwind/react";
 
 
@@ -72,7 +70,7 @@ const CardDetails = () => {
       {
         description && <Typography color="blue-gray" className='font-semibold'>
         Facilities :  
-         <ul className='list'>
+         <ul>
            <li className='ml-2'>1. {facilities[0]}</li>
            <li className='ml-2'>2. {facilities[1]}</li>
            <li  className='ml-2'>3. {facilities[2]}</li>

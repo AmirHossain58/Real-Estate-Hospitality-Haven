@@ -18,7 +18,8 @@ const Navbar = ({name,photo}) => {
   <li><NavLink to='/about'>About</NavLink></li>
   </>
   return (
-      <div className="navbar bg-base-100">
+      <div className=" bg-base-200">
+      <div className='navbar '>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,6 +47,7 @@ const Navbar = ({name,photo}) => {
           <button onClick={handelLogOut} className='btn'>Logout</button>
         </div>:<Link to={'/login'} className="btn">Login</Link>
         }
+      </div>
       </div>
     </div>
   );
