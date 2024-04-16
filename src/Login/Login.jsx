@@ -4,11 +4,13 @@ import Navbar from '../Navbar/Navbar';
 import { AuthContext } from '../provider/AuthProvider';
 import { useForm } from 'react-hook-form';
 import { FaEye,FaEyeSlash } from "react-icons/fa";
-import { FaGoogle,FaGithub } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const {signIn,googleSignIn,user,githubSignIn}=useContext(AuthContext)
+    const [error,setError]=useState()
     const [show,setShow]=useState(false)
     const location=useLocation()
     const navigate=useNavigate()
@@ -23,10 +25,30 @@ const Login = () => {
       const onSubmit = (data) =>{
         signIn(data.email,data.password)
         .then(result=>{
+            // console.log(result);
+            const user = result.user;
+            console.log('User signed in:', user);
+            toast.success('Login successful!')
             navigate(location?.state?location.state:'/')
         })
-        .catch()
-        console.log(data)
+        .catch(error=>{
+              // Handle sign-in errors
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      
+      // Display error message to the user
+      if (errorCode === 'auth/wrong-password' || errorCode === 'auth/user-not-found') {
+        // Use a toast or sweet alert to show the error message
+        // showToast(errorMessage);
+        toast.error(errorMessage)
+        console.log(errorMessage);
+      } else {
+        // Handle other errors
+        toast.error(errorMessage)
+        console.error('Sign-in error:', errorMessage);
+      }
+        })
+        // console.log(data)
         }
         const handleGoogleSignIn=()=>{
             googleSignIn()
@@ -95,12 +117,14 @@ const Login = () => {
     </div>
 
     </div>
-    <p className='text-center mb-4'>Do have an account, Please <Link
+    <p className='text-center mb-4'>Do not have an account, Please <Link
     className='font-bold text-blue-800 underline' 
     to={'/register'}>Register</Link></p>
     </div>
+<ToastContainer />
 </div>
 </div>
+
         </div>
     );
 };

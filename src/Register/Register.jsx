@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaEye,FaEyeSlash } from "react-icons/fa";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../Navbar/Navbar';
 import { AuthContext } from '../provider/AuthProvider';
 import { useForm } from "react-hook-form"
@@ -20,7 +22,25 @@ const Register = () => {
     const onSubmit = (data) =>{
         //   console.log(data,data.photo,data.name)
         
-        
+        const verifyPassword = (password) => {
+            const uppercaseRegex = /[A-Z]/;
+            const lowercaseRegex = /[a-z]/;
+            const lengthRegex = /^.{6,}$/;
+          
+            const hasUppercase = uppercaseRegex.test(password);
+            const hasLowercase = lowercaseRegex.test(password);
+            const hasMinLength = lengthRegex.test(password);
+          
+            return hasUppercase && hasLowercase && hasMinLength;
+          };
+          const isValidPassword = verifyPassword(data.password);
+
+            if (isValidPassword) {
+                toast.success('Successfully Register')
+            // console.log("Password is valid.");
+            } else {
+            return toast.error("Password Must have an Uppercase,a Lowercase ,Length at least 6 character.");
+            }
         setPhoto(data.photo)
         setName(data.name)
         createUser(data.email,data.password)
@@ -93,6 +113,7 @@ const Register = () => {
     className='font-bold text-blue-800 underline' 
     to={'/login'}>Login</Link></p>
     </div>
+    <ToastContainer />
 </div>
 </div>
         </div>

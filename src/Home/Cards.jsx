@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 
 const Cards = ({card}) => {
-    console.log(card);
+    // console.log(card);
     const{id,image,location,price,status,facilities,estate_title,description,area
     }=card
     return (
