@@ -9,6 +9,7 @@ import {
     CardFooter,
     Typography,
   } from "@material-tailwind/react";
+import { Helmet } from 'react-helmet-async';
 
 
 const CardDetails = () => {
@@ -27,6 +28,9 @@ const CardDetails = () => {
       }=data1
     return (
         <div>
+           <Helmet>
+            <title>Hospitality Haven | Estate Details</title>
+          </Helmet>
             <Navbar></Navbar>
         <div className='container mx-auto my-10'>
             <Card className=" overflow-hidden">

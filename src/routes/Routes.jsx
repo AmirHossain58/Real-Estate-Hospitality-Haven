@@ -5,6 +5,9 @@ import Login from "../Login/Login";
 import Register from './../Register/Register';
 import CardDetails from "../Home/CardDetails";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import UserProfile from "../UserProfile/UserProfile";
+import UpdateProfile from "../UpdateProfile/UpdateProfile";
 
 
 
@@ -14,6 +17,7 @@ const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:'/',
@@ -26,6 +30,14 @@ const router = createBrowserRouter([
         {
             path:'/register',
             element:<Register></Register>,
+        },
+        {
+            path:'/userProfile',
+            element:<UserProfile></UserProfile>,
+        },
+        {
+            path:'/updateProfile',
+            element:<UpdateProfile></UpdateProfile>,
         },
         {
             path:"/cardDetails/:id",

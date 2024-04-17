@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../Navbar/Navbar';
 import { AuthContext } from '../provider/AuthProvider';
 import { useForm } from "react-hook-form"
+import { Helmet } from 'react-helmet-async';
 const Register = () => {
     const [show,setShow]=useState(false)
     const [name ,setName]=useState('')
@@ -50,6 +51,9 @@ const Register = () => {
     }
     return (
         <div>
+            <Helmet>
+            <title>Hospitality Haven | Register</title>
+          </Helmet>
             <Navbar 
             name={name}
             photo={photo}
@@ -59,7 +63,7 @@ const Register = () => {
 <div className="hero-content flex-col ">
     <div className="text-center">
     <h1 className="text-5xl font-bold">Register now!</h1>
-    <p className="py-6 max-w-2xl">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+    <p className="py-6 max-w-2xl">Nice to meet you! Enter your details to register.</p>
     </div>
     <div className="card shrink-0 w-full  shadow-2xl bg-base-100">
     <form  onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -109,7 +113,7 @@ const Register = () => {
         <button className="btn btn-primary uppercase font-bold">Register</button>
         </div>
     </form>
-    <p>Do have an account, Please <Link
+    <p className='text-center mb-4 text-xl'>Do have an account, Please <Link
     className='font-bold text-blue-800 underline' 
     to={'/login'}>Login</Link></p>
     </div>

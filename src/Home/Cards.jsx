@@ -22,7 +22,7 @@ const Cards = ({card}) => {
             <Card className="w-full p-2 rounded-lg shadow-lg">
       <CardHeader floated={false} color="blue-gray">
         <img
-        className='rounded-xl min-h-[360px]'
+        className='rounded-xl w-full min-h-[360px]'
           src={image}
           alt="ui/ux review check"
         />

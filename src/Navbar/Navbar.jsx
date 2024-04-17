@@ -13,8 +13,6 @@ const Navbar = ({name,photo}) => {
 
   const navLink=<>
   <li><NavLink to='/'>Home</NavLink></li>
-  <li><NavLink to='/register'>Update Profile</NavLink></li>
-  {/* <li><NavLink to='/login'>Login </NavLink></li> */}
   <li><NavLink to='/about'>About</NavLink></li>
   </>
   return (
@@ -27,6 +25,13 @@ const Navbar = ({name,photo}) => {
           </div>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
             {navLink}
+            {
+             user&&
+              <>
+              <li><NavLink to='/updateProfile'>Update Profile</NavLink></li>
+            <li><NavLink to='/userProfile'>userProfile </NavLink></li>
+              </>
+            }
           </ul>
         </div>
       <Link to={'/'} className="btn btn-ghost gap-0 font-bold text-xl">Hospitality<span className="text-red-500">Haven</span></Link>
@@ -34,6 +39,14 @@ const Navbar = ({name,photo}) => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           {navLink}
+          {
+             user&&
+              <>
+              <li><NavLink to='/updateProfile'>Update Profile</NavLink></li>
+            <li><NavLink to='/userProfile'>user Profile </NavLink></li>
+              </>
+            }
+          
         </ul>
       </div>
       <div className="navbar-end">

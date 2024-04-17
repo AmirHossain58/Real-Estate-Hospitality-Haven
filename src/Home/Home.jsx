@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 const Home = () => {
     const {user,loading}=useContext(AuthContext)
     if(loading){
@@ -28,6 +29,9 @@ const Home = () => {
       }
     return (
         <div className="container mx-auto">
+          <Helmet>
+            <title>Hospitality Haven | Home</title>
+          </Helmet>
             <Navbar></Navbar>
             <ToastContainer />
             <Banner></Banner>

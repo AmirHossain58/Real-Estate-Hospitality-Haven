@@ -7,6 +7,7 @@ import { FaEye,FaEyeSlash } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const {signIn,googleSignIn,user,githubSignIn}=useContext(AuthContext)
@@ -68,6 +69,9 @@ const Login = () => {
         }
     return (
         <div>
+            <Helmet>
+            <title>Hospitality Haven | Login</title>
+          </Helmet>
             <Navbar></Navbar>
             <div className="hero min-h-screen bg-base-200">
 <div className="hero-content  flex-col ">
