@@ -14,7 +14,7 @@ Real Estate Hospitality Haven is a modern web application designed to provide a 
 - **Profile Management:** Easily update your profile information, including name and profile picture, to personalize your experience.
 - **Responsive Design:** Enjoy a seamless browsing experience across devices with our responsive and mobile-friendly design.
 
-## Technologies Used
+## Technologies And NPM Package Use
 
 - React
 - React Router
@@ -23,10 +23,11 @@ Real Estate Hospitality Haven is a modern web application designed to provide a 
 - React Toastify
 - React Hook form
 - Animate.css
+- material-tailwind
+- swiper slider
 
 
 
 
 
-- real-estate-hospitality-haven
 

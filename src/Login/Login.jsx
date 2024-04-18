@@ -27,11 +27,11 @@ const Login = () => {
       const onSubmit = (data) =>{
         signIn(data.email,data.password)
         .then(result=>{
-            // console.log(result);
-            const user = result.user;
-            console.log('User signed in:', user);
-            toast.success('Login successful!')
-            navigate(location?.state?location.state:'/')
+            const user1 = result.user;
+                toast.success('Login successful!')
+            setTimeout(()=>{
+                navigate(location?.state?location.state:'/')
+            },1000)
         })
         .catch(error=>{
               // Handle sign-in errors
@@ -40,32 +40,33 @@ const Login = () => {
       
       // Display error message to the user
       if (errorCode === 'auth/wrong-password' || errorCode === 'auth/user-not-found') {
-        // Use a toast or sweet alert to show the error message
-        // showToast(errorMessage);
         toast.error(errorMessage)
-        console.log(errorMessage);
       } else {
         // Handle other errors
         toast.error(errorMessage)
         console.error('Sign-in error:', errorMessage);
       }
         })
-        // console.log(data)
         }
         const handleGoogleSignIn=()=>{
             googleSignIn()
             .then(result=>{
-                navigate(location?.state?location.state:'/')
+                toast.success('Login successful!')
+                setTimeout(()=>{
+                    navigate(location?.state?location.state:'/')
+                },1000)
             })
             .catch()
         }
         const handleGithubSignIn=()=>{
             githubSignIn()
             .then(result=>{
-                navigate(location?.state?location.state:'/')
+                toast.success('Login successful!')
+                setTimeout(()=>{
+                    navigate(location?.state?location.state:'/')
+                },1000)
             })
             .catch(e=>{
-                // console.log(e);
             })
         }
     return (

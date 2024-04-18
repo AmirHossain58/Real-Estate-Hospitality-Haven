@@ -48,7 +48,7 @@ const CardDetails = () => {
       </CardHeader>
       <CardBody>
         <Typography variant="h1" className='font-bold' color="blue-gray">
-          {estate_title}
+          {data1?estate_title:''}
         </Typography>
         <Typography variant="lead" color="gray" className="mt-3 font-normal">{description}
         Indulge in the epitome of luxury with our beachfront paradises, where pristine sands meet crystal-clear waters, and every amenity is at your fingertips. Experience the tranquility of the mountains in our cozy lodges, offering stunning vistas and unparalleled serenity. Or immerse yourself in the vibrant energy of the city with our chic urban hotels, where modern sophistication meets exceptional service.

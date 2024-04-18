@@ -15,14 +15,14 @@ const Blog = () => {
             <Navbar></Navbar>
            <div className='container mx-auto'>
            <div className=' text-center font-semibold py-8 mt-12 bg-orange-200'>
-                <h1 className="text-4xl">Welcome to Our Blog </h1>
+                <h1 className="text-4xl mb-2">Welcome to Our Blog </h1>
                 <p>Welcome to our vibrant and insightful blog, your go-to destination for captivating stories, thought-provoking articles, and expert advice.</p>
             </div>
             <div className='bg-[#031a29] px-6 py-14 text-white'>
                 <h3 className=''>ALL BLOGS <br /> <span className='text-4xl'>
                 Hospitality Haven</span></h3>
 
-            <div className='grid justify-center md:grid-cols-3 lg:grid-cols-4'>
+            <div className='grid justify-center md:grid-cols-2 lg:grid-cols-3'>
             <Card className="mt-6 w-72 border rounded-none">
       <CardHeader color="blue-gray" className="relative h-56 rounded-none">
         <img
@@ -31,7 +31,7 @@ const Blog = () => {
         />
       </CardHeader>
       <CardBody>
-        <Typography variant="" color="blue-gray" className="mb-2">
+        <Typography color="blue-gray" className="mb-2">
         Hotels/ 20 Mar 2024
         </Typography>
         <Typography variant="h5" color="blue-gray" className="mb-2">
@@ -52,7 +52,7 @@ const Blog = () => {
         />
       </CardHeader>
       <CardBody>
-        <Typography variant="" color="blue-gray" className="mb-2">
+        <Typography color="blue-gray" className="mb-2">
         Hotels/ 20 Mar 2024
         </Typography>
         <Typography variant="h5" color="blue-gray" className="mb-2">
@@ -74,7 +74,7 @@ A premise located at a scenic or tourist place specially built with...
         />
       </CardHeader>
       <CardBody>
-        <Typography variant="" color="blue-gray" className="mb-2">
+        <Typography color="blue-gray" className="mb-2">
         Hotels/ 20 Mar 2024
         </Typography>
         <Typography variant="h5" color="blue-gray" className="mb-2">
@@ -96,7 +96,7 @@ A place where a lot of people go on holiday, usually one with a lot of hotels, b
         />
       </CardHeader>
       <CardBody>
-        <Typography variant="" color="blue-gray" className="mb-2">
+        <Typography color="blue-gray" className="mb-2">
         Hotels/ 20 Mar 2024
         </Typography>
         <Typography variant="h5" color="blue-gray" className="mb-2">
@@ -118,7 +118,7 @@ A place where a lot of people go on holiday, usually one with a lot of hotels, b
         />
       </CardHeader>
       <CardBody>
-        <Typography variant="" color="blue-gray" className="mb-2">
+        <Typography color="blue-gray" className="mb-2">
         Hotels/ 20 Mar 2024
 
 
