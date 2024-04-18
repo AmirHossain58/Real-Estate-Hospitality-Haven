@@ -93,7 +93,7 @@ const UpdateProfile = () => {
         </div>
        
         <div className="form-control mt-6">
-        <button className="btn text-xl bg-red-400 text-white uppercase font-bold">login</button>
+        <button className="btn text-xl bg-red-400 text-white uppercase font-bold">Update Profile </button>
         </div>
     </form>
   

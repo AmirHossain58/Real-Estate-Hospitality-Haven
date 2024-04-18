@@ -1,6 +1,6 @@
 # Real Estate Hospitality Haven
 
-Live Site: [YourLiveSiteURLHere](#)
+Live Site: [https://real-estate-hospitality-haven.web.app/](#)
 
 ## Description
 
@@ -14,7 +14,7 @@ Real Estate Hospitality Haven is a modern web application designed to provide a 
 - **Profile Management:** Easily update your profile information, including name and profile picture, to personalize your experience.
 - **Responsive Design:** Enjoy a seamless browsing experience across devices with our responsive and mobile-friendly design.
 
-## Technologies Used
+## Technologies Used || ## NPM Package Name
 
 - React
 - React Router
@@ -26,7 +26,7 @@ Real Estate Hospitality Haven is a modern web application designed to provide a 
 
 
 
-## NPM Package Name
+
 
 - real-estate-hospitality-haven
 

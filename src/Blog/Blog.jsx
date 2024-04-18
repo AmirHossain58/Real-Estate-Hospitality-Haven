@@ -18,11 +18,11 @@ const Blog = () => {
                 <h1 className="text-4xl">Welcome to Our Blog </h1>
                 <p>Welcome to our vibrant and insightful blog, your go-to destination for captivating stories, thought-provoking articles, and expert advice.</p>
             </div>
-            <div className='bg-[#031a29] md:px-6 py-14 text-white'>
+            <div className='bg-[#031a29] px-6 py-14 text-white'>
                 <h3 className=''>ALL BLOGS <br /> <span className='text-4xl'>
-                Hotels Haven</span></h3>
+                Hospitality Haven</span></h3>
 
-            <div className='grid md:grid-cols-3 lg:grid-cols-4'>
+            <div className='grid justify-center md:grid-cols-3 lg:grid-cols-4'>
             <Card className="mt-6 w-72 border rounded-none">
       <CardHeader color="blue-gray" className="relative h-56 rounded-none">
         <img
