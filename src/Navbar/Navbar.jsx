@@ -14,6 +14,8 @@ const Navbar = ({name,photo}) => {
   const navLink=<>
   <li><NavLink to='/'>Home</NavLink></li>
   <li><NavLink to='/about'>About</NavLink></li>
+  <li><NavLink to='/contract'>Contract Us</NavLink></li>
+  <li><NavLink to='/blogs'>Blogs</NavLink></li>
   </>
   return (
       <div className=" bg-base-200">

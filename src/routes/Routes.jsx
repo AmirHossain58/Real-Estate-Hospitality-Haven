@@ -8,6 +8,9 @@ import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import UserProfile from "../UserProfile/UserProfile";
 import UpdateProfile from "../UpdateProfile/UpdateProfile";
+import AboutUs from "../AboutUs/AboutUs";
+import ContractUs from './../ContractUs/ContractUs';
+import Blog from "../Blog/Blog";
 
 
 
@@ -32,9 +35,23 @@ const router = createBrowserRouter([
             element:<Register></Register>,
         },
         {
+            path:'/about',
+            element:<AboutUs></AboutUs>,
+        },
+        {
+            path:'/contract',
+            element:<ContractUs></ContractUs>,
+        },
+        {
             path:'/userProfile',
             element:<PrivateRoute>
               <UserProfile></UserProfile>
+            </PrivateRoute>,
+        },
+        {
+            path:'/blogs',
+            element:<PrivateRoute>
+              <Blog></Blog>
             </PrivateRoute>,
         },
         {

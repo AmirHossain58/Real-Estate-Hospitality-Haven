@@ -9,9 +9,11 @@ import {
   } from "@material-tailwind/react";
 import { AuthContext } from '../provider/AuthProvider';
 import { useForm } from "react-hook-form"
+import { ToastContainer } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const UpdateProfile = () => {
-  const{updateUserProfile,user,loading}=useContext(AuthContext)
+  const{updateUserProfile,user,loading,setUser}=useContext(AuthContext)
   const {
     register,
     handleSubmit,
@@ -37,10 +39,16 @@ const UpdateProfile = () => {
   const onSubmit = (data) =>{
     console.log(data);
     console.log(user)
+    if(data.name){
+      setUser({displayName:data.name})
+    }
+    if(data.photo){
+      setUser({photoURl:data.photo})
+    }
+    // setUser({displayName:data.name||user.displayName,photoURl:data.photo||user.photoURL})
       updateUserProfile(data.name,data.photo)
       .then()
       .catch()
-      
     
   }
 
@@ -53,57 +61,45 @@ const UpdateProfile = () => {
           <Navbar></Navbar>
 
           <div className='container mx-auto flex justify-center my-10'>
-          <Card color="transparent" shadow={false}>
-      <Typography variant="h4" color="blue-gray">
-      Update Profile
-      </Typography>
-      <Typography color="gray" className="mt-1 font-normal">
-        Nice to meet you! Enter your details to register.
-      </Typography>
-      <form 
-onSubmit={handleSubmit(onSubmit)}      className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
-        <div className="mb-1 flex flex-col gap-6">
-          <Typography variant="h6" color="blue-gray" className="-mb-3">
-            Your Name
-          </Typography>
-          <Input
-            size="lg"
-            
-            placeholder={user.displayName}
-            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-            labelProps={{
-              className: "before:content-none after:content-none",
-            }}
-            {...register("name")}
-          />
-          <Typography variant="h6" color="blue-gray" className="-mb-3">
-            Your PhotoURL
-          </Typography>
-          <Input
-            size="lg"
-            placeholder={user.photoURL}
-            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-            labelProps={{
-              className: "before:content-none after:content-none",
-            }}
-            {...register("photo")}
-          />
-          <Typography variant="h6" color="blue-gray" className="-mb-3">
-            Your Email
-          </Typography>
-          <Input
-            size="lg"
-            placeholder={user.email}
-            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-            labelProps={{
-              className: "before:content-none after:content-none",
-            }}
-          />
-          
+          <div className="hero-content  flex-col ">
+    <div className="text-center">
+    <h1 className="text-5xl font-bold">Update Your Profile</h1>
+    <p className="py-6 max-w-2xl">Enhance Your Experience: Customize your profile details to tailor your journey.</p>
+    </div>
+    <div className="card shrink-0 w-full  shadow-2xl bg-base-100">
+    <form  onSubmit={handleSubmit(onSubmit)} className="card-body">
+        <div className="form-control">
+        <label className="label">
+            <span className="label-text">Name</span>
+        </label>
+        <input type="text" name='name' placeholder={user.displayName} className="input input-bordered" 
+        {...register("name")}
+        />
         </div>
-        <button type='submit' className='btn'>Update Profile</button>
-      </form>
-         </Card>
+        <div className="form-control">
+        <label className="label">
+            <span className="label-text">Photo URL</span>
+        </label>
+        <input type="text" name='photo' placeholder={user.photoURL} className="input input-bordered" 
+        {...register("photo",)}
+        />
+        </div>
+        <div className="form-control">
+        <label className="label">
+            <span className="label-text">Email</span>
+        </label>
+        <input type="email" name='email' placeholder={user.email} className="input input-bordered" 
+        />
+        </div>
+       
+        <div className="form-control mt-6">
+        <button className="btn text-xl bg-red-400 text-white uppercase font-bold">login</button>
+        </div>
+    </form>
+  
+    </div>
+<ToastContainer />
+</div>
           </div>
 
 

@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import OurLocation from "./OurLocation";
 const Home = () => {
     const {user,loading}=useContext(AuthContext)
     if(loading){
@@ -36,6 +37,7 @@ const Home = () => {
             <ToastContainer />
             <Banner></Banner>
             <EstateSection></EstateSection>
+            <OurLocation></OurLocation>
             <Footer></Footer>
         </div>
     );

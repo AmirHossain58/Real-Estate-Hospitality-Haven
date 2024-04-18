@@ -21,6 +21,10 @@ Real Estate Hospitality Haven is a modern web application designed to provide a 
 - Firebase
 - Tailwind CSS
 - React Toastify
+- React Hook form
+- Animate.css
+
+
 
 ## NPM Package Name
 

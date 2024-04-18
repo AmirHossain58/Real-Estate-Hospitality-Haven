@@ -34,9 +34,9 @@ const Banner = () => {
     </div>
   </div>
 </div>
-  <div className="absolute left-[30%] top-[30%] font-bold text-white text-center">
-    <h1 className="text-5xl ">Welcome to ours <br />Hospitality<span className="text-red-500">Haven</span> </h1>
-    <p>Experience Hospitality Like Never Before: Hospitality Haven <br /> Awaits Your Arrival</p>
+  <div className="absolute left-[20%] md:left-[25%] top-[30%]  text-white text-center mx-auto">
+    <h1 className="text-2xl md:text-5xl font-bold ">Welcome to ours <br />Hospitality<span className="text-red-500">Haven</span> </h1>
+    <p className="w-52 md:w-full lg:w-full text-center">Experience Hospitality Like Never Before: Hospitality Haven Awaits Your Arrival</p>
   </div>
      </div>
  

@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from 'react-helmet-async';
+import Footer from '../Home/Footer';
 
 const Login = () => {
     const {signIn,googleSignIn,user,githubSignIn}=useContext(AuthContext)
@@ -64,7 +65,7 @@ const Login = () => {
                 navigate(location?.state?location.state:'/')
             })
             .catch(e=>{
-                console.log(e);
+                // console.log(e);
             })
         }
     return (
@@ -109,7 +110,7 @@ const Login = () => {
         <button className="btn text-xl bg-red-400 text-white uppercase font-bold">login</button>
         </div>
     </form>
-    <div className='flex items-center justify-around my-5'> 
+    <div className='flex flex-col md:flex-row space-y-4 items-center justify-around my-5'> 
     <h3 className='text-3xl font-bold text-blue-500'>Login With </h3>
     {/* google login */}
     <div onClick={handleGoogleSignIn}  className='flex items-center border p-3 rounded-lg'>
@@ -129,7 +130,7 @@ const Login = () => {
 <ToastContainer />
 </div>
 </div>
-
+<Footer></Footer>
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaEye,FaEyeSlash } from "react-icons/fa";
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,11 +8,16 @@ import Navbar from '../Navbar/Navbar';
 import { AuthContext } from '../provider/AuthProvider';
 import { useForm } from "react-hook-form"
 import { Helmet } from 'react-helmet-async';
+import Footer from '../Home/Footer';
+
 const Register = () => {
+    const navigate=useNavigate()
+    const location=useLocation()
+
     const [show,setShow]=useState(false)
     const [name ,setName]=useState('')
     const [photo ,setPhoto]=useState('')
-    const {createUser,setUser,user}=useContext(AuthContext)
+    const {createUser,setUser,user, googleSignIn,githubSignIn}=useContext(AuthContext)
     const {
         register,
         handleSubmit,
@@ -46,8 +51,25 @@ const Register = () => {
         setName(data.name)
         createUser(data.email,data.password)
         .then((r)=>{
+            navigate(location?.state?location.state:'/')
         })
         .catch()
+    }
+    const handleGoogleSignIn=()=>{
+        googleSignIn()
+        .then(result=>{
+            navigate(location?.state?location.state:'/')
+        })
+        .catch()
+    }
+    const handleGithubSignIn=()=>{
+        githubSignIn()
+        .then(result=>{
+            navigate(location?.state?location.state:'/')
+        })
+        .catch(e=>{
+            console.log(e);
+        })
     }
     return (
         <div>
@@ -60,7 +82,7 @@ const Register = () => {
             ></Navbar>
 
 <div className="hero min-h-screen bg-base-200">
-<div className="hero-content flex-col ">
+<div className="hero-content lg:w-3/4 flex-col ">
     <div className="text-center">
     <h1 className="text-5xl font-bold">Register now!</h1>
     <p className="py-6 max-w-2xl">Nice to meet you! Enter your details to register.</p>
@@ -110,9 +132,23 @@ const Register = () => {
             {show?<FaEye />:<FaEyeSlash />}</div>
         </div>
         <div className="form-control mt-6">
-        <button className="btn btn-primary uppercase font-bold">Register</button>
+        <button className="btn bg-red-400 uppercase font-bold">Register</button>
         </div>
-    </form>
+        </form>
+        <div className='flex flex-col md:flex-row items-center space-y-4 justify-around my-5'> 
+    <h3 className='text-3xl font-bold text-blue-500'>Login With </h3>
+    {/* google login */}
+    <div onClick={handleGoogleSignIn}  className='flex items-center border p-3 rounded-lg'>
+    <img className='h-[40px]' src="/googlelogo_color_272x92dp.png" alt="" />
+    </div>
+        {/* github login */}
+
+    <div onClick={handleGithubSignIn} className='flex items-center border p-3 rounded-lg' >
+   <img className='h-[50px] rounded-xl' src="/freecodecampl-github.png" alt="" />
+    </div>
+
+    </div>
+
     <p className='text-center mb-4 text-xl'>Do have an account, Please <Link
     className='font-bold text-blue-800 underline' 
     to={'/login'}>Login</Link></p>
@@ -120,6 +156,7 @@ const Register = () => {
     <ToastContainer />
 </div>
 </div>
+<Footer></Footer>
         </div>
     );
 };
