@@ -25,19 +25,19 @@ const Home = () => {
         </svg>
       </div>
       }
-      if(user){
-        toast('success')
-      }
+     
     return (
-        <div className="container mx-auto">
+        <div >
           <Helmet>
             <title>Hospitality Haven | Home</title>
           </Helmet>
             <Navbar></Navbar>
-            <ToastContainer />
+           <div className="container mx-auto">
+           <ToastContainer />
             <Banner></Banner>
             <EstateSection></EstateSection>
             <OurLocation></OurLocation>
+           </div>
             <Footer></Footer>
         </div>
     );
